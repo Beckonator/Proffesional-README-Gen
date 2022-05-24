@@ -54,9 +54,24 @@ const questions = [
   },
   {
     type: "input",
+    name: "credits",
+    message:
+      "List your collaborators, if any, with links to their GitHub profiles.",
+    validate: (value) => {
+      if (value) {
+        return true;
+      } else {
+        return "Please provide credit where credit is due.";
+      }
+    },
+  },
+  {
+    type: "list",
     name: "license",
     message: "Please choose a license for your project",
-    choices: [],
+    choices: [
+      "No License','GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0",
+    ],
   },
 ];
 
